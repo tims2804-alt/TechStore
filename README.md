@@ -40,7 +40,7 @@
 
 ## Схема базы данных
 
-![Схема базы данных](Database/Schema.png)
+![Схема базы данных](MiracleShoesWPF/Database/Schema.png)
 
 ## Запуск
 
