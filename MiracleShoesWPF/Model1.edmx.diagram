@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3a9d2c6a128e45de9e2d1edbbfa93d47" Name="Diagram1">
+        <EntityTypeShape EntityType="TechStoreDBModel.cart_items" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechStoreDBModel.carts" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechStoreDBModel.categories" Width="1.5" PointX="2.875" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechStoreDBModel.deliveries" Width="1.5" PointX="13.125" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechStoreDBModel.manufacturers" Width="1.5" PointX="3.125" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechStoreDBModel.order_items" Width="1.5" PointX="7.5" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechStoreDBModel.orders" Width="1.5" PointX="10" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechStoreDBModel.payments" Width="1.5" PointX="12.25" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechStoreDBModel.products" Width="1.5" PointX="5.375" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechStoreDBModel.sellers" Width="1.5" PointX="8.5" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechStoreDBModel.users" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <AssociationConnector Association="TechStoreDBModel.FK_cart_items_carts" ManuallyRouted="false" />
+        <AssociationConnector Association="TechStoreDBModel.FK_cart_items_products" ManuallyRouted="false" />
+        <AssociationConnector Association="TechStoreDBModel.FK_carts_users" ManuallyRouted="false" />
+        <AssociationConnector Association="TechStoreDBModel.FK_products_categories" ManuallyRouted="false" />
+        <AssociationConnector Association="TechStoreDBModel.FK_deliveries_orders" ManuallyRouted="false" />
+        <AssociationConnector Association="TechStoreDBModel.FK_products_manufacturers" ManuallyRouted="false" />
+        <AssociationConnector Association="TechStoreDBModel.FK_order_items_orders" ManuallyRouted="false" />
+        <AssociationConnector Association="TechStoreDBModel.FK_order_items_products" ManuallyRouted="false" />
+        <AssociationConnector Association="TechStoreDBModel.FK_orders_sellers" ManuallyRouted="false" />
+        <AssociationConnector Association="TechStoreDBModel.FK_orders_users" ManuallyRouted="false" />
+        <AssociationConnector Association="TechStoreDBModel.FK_payments_orders" ManuallyRouted="false" />
+        <AssociationConnector Association="TechStoreDBModel.FK_products_sellers" ManuallyRouted="false" />
+        <AssociationConnector Association="TechStoreDBModel.FK_sellers_users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

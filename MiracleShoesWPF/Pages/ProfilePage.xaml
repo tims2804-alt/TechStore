@@ -1,0 +1,61 @@
+﻿<Page x:Class="MiracleShoesWPF.Pages.ProfilePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:MiracleShoesWPF.Pages"
+      xmlns:app="clr-namespace:MiracleShoesWPF"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Профиль">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Width="420" HorizontalAlignment="Center" Margin="0,16">
+            <TextBlock Text="Профиль" FontSize="22" FontWeight="Bold" Margin="0,0,0,8"/>
+
+            <TextBlock x:Name="EmailText" Margin="4,0,0,0"/>
+            <TextBlock x:Name="RegisteredText" Foreground="{DynamicResource MutedBrush}" Margin="4,0,0,8"/>
+
+            <TextBlock Text="Имя:" Margin="4,0,0,0"/>
+            <TextBox x:Name="FirstNameBox" MaxLength="100" app:Hint.Text="Имя"/>
+            <TextBlock Text="Фамилия:" Margin="4,4,0,0"/>
+            <TextBox x:Name="LastNameBox" MaxLength="100" app:Hint.Text="Фамилия"/>
+            <TextBlock Text="Телефон:" Margin="4,4,0,0"/>
+            <TextBox x:Name="PhoneBox" MaxLength="20" app:Hint.Text="+7 900 111-22-33"/>
+
+            <TextBlock x:Name="ProfileMessage" TextWrapping="Wrap" Margin="4,6,4,0" Visibility="Collapsed"/>
+            <Button Content="Сохранить данные" Click="SaveProfile_Click" HorizontalAlignment="Left"/>
+            <Button Content="Мои заказы" ToolTip="История ваших покупок" Click="Orders_Click" HorizontalAlignment="Left"/>
+            <Button Content="Сменить пароль" ToolTip="Изменить пароль для входа" Click="ChangePassword_Click" HorizontalAlignment="Left"/>
+
+            <Separator Margin="0,16"/>
+
+            <!-- Блок для пользователя без магазина -->
+            <StackPanel x:Name="BecomeSellerPanel">
+                <TextBlock Text="Стать продавцом" FontSize="18" FontWeight="SemiBold"/>
+                <TextBlock Text="Создайте магазин, чтобы продавать свои товары." Foreground="{DynamicResource MutedBrush}"
+                           Margin="4,2,0,6" TextWrapping="Wrap"/>
+                <TextBlock Text="Название магазина:" Margin="4,0,0,0"/>
+                <TextBox x:Name="ShopNameBox" MaxLength="100" app:Hint.Text="Например: TechWorld" ToolTip="Название должно быть уникальным"/>
+                <TextBlock Text="Описание (необязательно):" Margin="4,4,0,0"/>
+                <TextBox x:Name="ShopDescBox" MaxLength="1000" Height="70" TextWrapping="Wrap"
+                         AcceptsReturn="True" VerticalScrollBarVisibility="Auto" app:Hint.Text="Чем торгует магазин"/>
+                <TextBlock x:Name="ShopMessage" TextWrapping="Wrap" Margin="4,6,4,0" Visibility="Collapsed"/>
+                <Button Content="Создать магазин" Click="CreateShop_Click" HorizontalAlignment="Left"/>
+            </StackPanel>
+
+            <!-- Блок для продавца -->
+            <StackPanel x:Name="SellerPanel" Visibility="Collapsed">
+                <TextBlock Text="Мой магазин" FontSize="18" FontWeight="SemiBold"/>
+                <TextBlock x:Name="ShopNameText" FontSize="16" Margin="4,6,0,0"/>
+                <TextBlock x:Name="ShopDescText" TextWrapping="Wrap" Margin="4,2,0,0"/>
+                <TextBlock x:Name="ShopStatusText" Foreground="{DynamicResource MutedBrush}" Margin="4,2,0,0"/>
+                <StackPanel Orientation="Horizontal" Margin="0,6,0,0">
+                    <Button Content="Товары" Click="SellerProducts_Click"/>
+                    <Button Content="Заказы магазина" Click="SellerOrders_Click"/>
+                    <Button Content="Отчёты" Click="SellerReports_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

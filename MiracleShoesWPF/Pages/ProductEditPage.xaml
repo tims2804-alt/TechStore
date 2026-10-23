@@ -1,0 +1,49 @@
+﻿<Page x:Class="MiracleShoesWPF.Pages.ProductEditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:app="clr-namespace:MiracleShoesWPF"
+      mc:Ignorable="d"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Карточка товара">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Width="420" HorizontalAlignment="Center" Margin="0,16">
+            <TextBlock x:Name="HeaderText" FontSize="22" FontWeight="Bold" Margin="0,0,0,8"/>
+
+            <TextBlock Text="Название:" Margin="4,0,0,0"/>
+            <TextBox x:Name="NameBox" MaxLength="200" app:Hint.Text="Например: iPhone 15 128 ГБ"
+                     ToolTip="Название товара"/>
+
+            <TextBlock Text="Описание:" Margin="4,4,0,0"/>
+            <TextBox x:Name="DescBox" MaxLength="2000" Height="80" TextWrapping="Wrap" AcceptsReturn="True"
+                     VerticalScrollBarVisibility="Auto" app:Hint.Text="Краткое описание товара"/>
+
+            <TextBlock Text="Категория:" Margin="4,4,0,0"/>
+            <ComboBox x:Name="CategoryBox" DisplayMemberPath="name" SelectedValuePath="id"/>
+
+            <TextBlock Text="Производитель:" Margin="4,4,0,0"/>
+            <ComboBox x:Name="ManufacturerBox" DisplayMemberPath="name" SelectedValuePath="id"/>
+
+            <TextBlock Text="Цена, ₽:" Margin="4,4,0,0"/>
+            <TextBox x:Name="PriceBox" MaxLength="12" app:Hint.Text="Например: 29990" ToolTip="Цена не может быть отрицательной"/>
+
+            <TextBlock Text="Количество на складе:" Margin="4,4,0,0"/>
+            <TextBox x:Name="StockBox" MaxLength="6" app:Hint.Text="Например: 10" ToolTip="Целое число, не меньше 0"/>
+
+            <TextBlock Text="Гарантия, месяцев (необязательно):" Margin="4,4,0,0"/>
+            <TextBox x:Name="WarrantyBox" MaxLength="3" app:Hint.Text="Например: 12"/>
+
+            <CheckBox x:Name="ActiveBox" Content="Показывать в каталоге" IsChecked="True" Margin="4,8,4,0"/>
+
+            <TextBlock x:Name="ErrorText" Foreground="#DC2626" TextWrapping="Wrap" Margin="4,8,4,0"
+                       Visibility="Collapsed"/>
+
+            <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+                <Button Content="Сохранить" IsDefault="True" Click="Save_Click"/>
+                <Button Content="Отмена" Background="#64748B" Click="Cancel_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

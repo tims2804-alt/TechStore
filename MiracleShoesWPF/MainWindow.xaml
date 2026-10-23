@@ -1,0 +1,59 @@
+﻿<Window x:Class="MiracleShoesWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MiracleShoesWPF"
+        mc:Ignorable="d"
+        Language="ru-RU"
+        Title="TechStore" Height="680" Width="1050" MinHeight="500" MinWidth="900"
+        Background="{DynamicResource WindowBrush}"
+        Foreground="{DynamicResource TextBrush}"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="{DynamicResource HeaderBrush}"
+                BorderBrush="{DynamicResource LineBrush}" BorderThickness="0,0,0,1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="BackButton" Grid.Column="0" Content="← Назад"
+                        ToolTip="Вернуться на предыдущую страницу"
+                        Click="BackButton_Click" Visibility="Collapsed"/>
+                <TextBlock Grid.Column="1" Text="TechStore" FontSize="20" FontWeight="Bold"
+                           VerticalAlignment="Center" Margin="12,0,16,0"/>
+
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <Button x:Name="CatalogButton" Content="Каталог" ToolTip="Каталог товаров" Click="CatalogButton_Click"/>
+                    <Button x:Name="CartButton" Content="Корзина" ToolTip="Ваша корзина" Click="CartButton_Click"/>
+                    <Button x:Name="ProfileButton" Content="Профиль" ToolTip="Личные данные и магазин" Click="ProfileButton_Click"/>
+                    <Button x:Name="SellerButton" Content="Мой магазин" ToolTip="Товары, заказы и отчёты магазина"
+                            Click="SellerButton_Click" Visibility="Collapsed"/>
+                </StackPanel>
+
+                <TextBlock x:Name="UserText" Grid.Column="3" Text="Гость"
+                           VerticalAlignment="Center" Margin="0,0,8,0"/>
+                <Button x:Name="ThemeButton" Grid.Column="4" Content="Тема"
+                        ToolTip="Переключить светлую и тёмную тему" Click="ThemeButton_Click"/>
+                <Button x:Name="AuthButton" Grid.Column="5" Content="Войти"
+                        Click="AuthButton_Click"/>
+            </Grid>
+        </Border>
+
+        <Frame x:Name="MainFrame"
+               NavigationUIVisibility="Hidden"
+               Source="Pages/LoginPage.xaml"
+               Grid.Row="1"/>
+    </Grid>
+</Window>
